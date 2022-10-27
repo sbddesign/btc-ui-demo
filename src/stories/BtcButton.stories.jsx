@@ -1,6 +1,12 @@
 import React from 'react';
-
 import Button from '../components/Button'
+import {ArrowRightIcon, CheckIcon, CrossIcon} from '@bitcoin-design/bitcoin-icons-react/filled'
+
+const icons = {
+  ArrowRightIcon: <ArrowRightIcon />,
+  CheckIcon: <CheckIcon />,
+  CrossIcon: <CrossIcon />
+}
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -14,6 +20,18 @@ export default {
     size: {
       options: ['small', 'default', 'large'],
       control: {type: 'radio'}
+    },
+    icon: {
+      options: Object.keys(icons),
+      mapping: icons,
+      control: {
+        type: 'select',
+        labels: {
+          ArrowRightIcon: 'Arrow',
+          CheckIcon: 'Check',
+          CrossIcon: 'Cross'
+        }
+      }
     }
   }
 };
@@ -27,7 +45,7 @@ Filled.args = {
   size: 'default',
   style: 'filled',
   label: true,
-  icon: false,
+  icon: <ArrowRightIcon />,
   text: 'Filled Button',
   disabled: false
 };
@@ -38,7 +56,7 @@ Outline.args = {
   size: 'default',
   style: 'outline',
   label: true,
-  icon: false,
+  icon: <CheckIcon />,
   text: 'Outline Button',
   disabled: false
 };
@@ -49,7 +67,7 @@ Free.args = {
   size: 'default',
   style: 'free',
   label: true,
-  icon: false,
+  icon: <CrossIcon />,
   text: 'Free Button',
   disabled: false
 };
