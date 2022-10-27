@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Button from './components/Button';
 
 function App() {
   return (
@@ -17,6 +18,18 @@ function App() {
         >
           Learn React
         </a>
+
+        <h1 className="text-3xl font-bold underline">
+          Hello world!
+        </h1>
+
+        <Button
+          active
+          label
+          size="large"
+          style="filled"
+          text="Call to Action"
+        />
       </header>
     </div>
   );
